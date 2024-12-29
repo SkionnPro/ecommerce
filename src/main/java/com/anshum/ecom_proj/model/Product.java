@@ -1,6 +1,5 @@
 package com.anshum.ecom_proj.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,10 +24,11 @@ public class Product {
     private String brand;
     private BigDecimal price;
     private String category;
-
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-mm-yyyy")
     private Date releaseDate;
-    private boolean available;
-    private int quantity;
-
+    private boolean productAvailable;
+    private int stockQuantity;
+    private String imageName;
+    private String imageType;
+    @Lob
+    private byte[] imageData;
 }
